@@ -8,7 +8,11 @@ class ArtistsController < ApplicationController
   end
 
   def new
-    @artist = Artist.new
+    if @preference == true
+      @artist = Artist.new
+    else
+      redirect_to artists_path
+    end
   end
 
   def create
